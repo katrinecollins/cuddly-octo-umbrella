@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-import {GET_USER} from 'utils/queries';
+import {GET_USER} from '../utils/queries';
 import {REMOVE_BOOK} from '../utils/mutation';
 
 
