@@ -1,10 +1,11 @@
 const express = require('express');
-const { gql } = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 
 const path = require('path');
 const db = require('./config/connection');
 // const routes = require('./routes');
-const {typeDefs} = require('./schemas')
+const {typeDefs, resolvers} = require('./schemas')
+const {authMiddleware} = require('./utils/auth.js')
 
 
 const app = express();
@@ -15,7 +16,7 @@ const startServer = async () => {
   const server = new ApolloServer({ 
     typeDefs, 
     resolvers, 
-    // context: authMiddleware 
+    context: authMiddleware 
   });
 
   // Start the Apollo server
