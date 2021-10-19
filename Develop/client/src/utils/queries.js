@@ -1,4 +1,4 @@
-import gql from 'graph-tag';
+import {gql} from '@apollo/client';
 
 export const GET_USER = gql`
     {
